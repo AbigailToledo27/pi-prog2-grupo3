@@ -26,7 +26,18 @@ const productController = {
     },
     add: function (req, res) {
         return res.render('product-add', { title: 'Cargar producto' });
-    }
+    },
+    search: function (req, res) {
+        const searchTerm = req.query.busqueda;
+        ids = [5,9];
+        results =[];
+        for (let i = 0; i < data.productos.length; i++) {
+            if (data.productos[i].id == ids[0] || data.productos[i].id == ids[1]) {
+                results.push(data.productos[i]);
+            }
+        }
+        return res.render('search-results', { title: `Resultados de búsqueda para ${searchTerm}`, results: results });
+  }
 }
 
 module.exports = productController;
