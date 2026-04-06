@@ -37,7 +37,7 @@ const productController = {
             }
         }
         return res.render('search-results', { title: `Resultados de búsqueda para ${searchTerm}`, results: results });
-  }
+    }
 }
 
 module.exports = productController;

@@ -5,35 +5,35 @@ const data = {
             email: "lucia.reader@gmail.com",
             usuario: "LuciaReader",
             contrasena: "123456",
-            fotoPerfil: "images/chica1.jpg"
+            fotoPerfil: "/images/chica1.jpg"
         },
         {
             id: 2,
             email: "mateo.novelas@gmail.com",
             usuario: "MateoNovelas",
             contrasena: "123456",
-            fotoPerfil: "images/chico1.jpg"
+            fotoPerfil: "/images/chico1.jpg"
         },
         {
             id: 3,
             email: "sofia.libros@gmail.com",
             usuario: "SofiLibros",
             contrasena: "123456",
-            fotoPerfil: "images/chica2.jpg"
+            fotoPerfil: "/images/chica2.jpg"
         },
         {
             id: 4,
             email: "tomas.paginas@gmail.com",
             usuario: "TomiPaginas",
             contrasena: "123456",
-            fotoPerfil: "images/chico2.jpg"
+            fotoPerfil: "/images/chico2.jpg"
         },
         {
             id: 5,
             email: "valentina.lectora@gmail.com",
             usuario: "ValeLectora",
             contrasena: "123456",
-            fotoPerfil: "images/chica3.jpg"
+            fotoPerfil: "/images/chica3.jpg"
         }
     ],
     productos: [
@@ -51,21 +51,21 @@ const data = {
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Muy linda edición, me llegó en perfecto estado.",
-                    imagenPerfil: "https://placehold.co/50x50?text=MN"
+                    imagenPerfil: "/images/chico1.jpg"
                 },
                 {
                     id: 2,
                     usuarioId: 3,
                     nombreUsuario: "SofiLibros",
                     texto: "Un clásico hermoso para regalar o releer.",
-                    imagenPerfil: "https://placehold.co/50x50?text=SL"
+                    imagenPerfil: "/images/chica2.jpg"
                 },
                 {
                     id: 3,
                     usuarioId: 5,
                     nombreUsuario: "ValeLectora",
                     texto: "La descripción coincide y el libro se ve muy lindo.",
-                    imagenPerfil: "https://placehold.co/50x50?text=VL"
+                    imagenPerfil: "/images/chica3.jpg"
                 }
             ]
         },
@@ -83,21 +83,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "Uno de mis libros favoritos, gran elección para el catálogo.",
-                    imagenPerfil: "https://placehold.co/50x50?text=LR"
+                    imagenPerfil: "/images/chica1.jpg"
                 },
                 {
                     id: 5,
                     usuarioId: 4,
                     nombreUsuario: "TomiPaginas",
                     texto: "Muy buena novela, súper recomendable.",
-                    imagenPerfil: "https://placehold.co/50x50?text=TP"
+                    imagenPerfil: "/images/chico2.jpg"
                 },
                 {
                     id: 6,
                     usuarioId: 5,
                     nombreUsuario: "ValeLectora",
                     texto: "Buen precio para un libro tan importante.",
-                    imagenPerfil: "https://placehold.co/50x50?text=VL"
+                    imagenPerfil: "/images/chica3.jpg"
                 }
             ]
         },
@@ -115,21 +115,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "Hermosa historia, ideal para quienes aman los clásicos.",
-                    imagenPerfil: "https://placehold.co/50x50?text=LR"
+                    imagenPerfil: "/images/chica1.jpg"
                 },
                 {
                     id: 8,
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Muy linda edición para tener en la biblioteca.",
-                    imagenPerfil: "https://placehold.co/50x50?text=MN"
+                    imagenPerfil: "/images/chico2.jpg"
                 },
                 {
                     id: 9,
                     usuarioId: 4,
                     nombreUsuario: "TomiPaginas",
                     texto: "Gran libro y muy buena descripción.",
-                    imagenPerfil: "https://placehold.co/50x50?text=TP"
+                    imagenPerfil: "/images/chico2.jpg"
                 }
             ]
         },
@@ -147,21 +147,21 @@ const data = {
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Libro indispensable, siempre vale la pena leerlo.",
-                    imagenPerfil: "https://placehold.co/50x50?text=MN"
+                    imagenPerfil: "/images/chico1.jpg"
                 },
                 {
                     id: 11,
                     usuarioId: 3,
                     nombreUsuario: "SofiLibros",
                     texto: "Muy buena opción para sumar variedad al sitio.",
-                    imagenPerfil: "https://placehold.co/50x50?text=SL"
+                    imagenPerfil: "/images/chica2.jpg"
                 },
                 {
                     id: 12,
                     usuarioId: 5,
                     nombreUsuario: "ValeLectora",
                     texto: "Ideal para quienes disfrutan las distopías.",
-                    imagenPerfil: "https://placehold.co/50x50?text=VL"
+                    imagenPerfil: "/images/chica3.jpg"
                 }
             ]
         },
@@ -179,21 +179,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "Perfecto para quienes aman Harry Potter.",
-                    imagenPerfil: "https://placehold.co/50x50?text=LR"
+                    imagenPerfil: "/images/chica1.jpg"
                 },
                 {
                     id: 14,
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Muy buena elección para un catálogo juvenil.",
-                    imagenPerfil: "https://placehold.co/50x50?text=MN"
+                    imagenPerfil: "/images/chico1.jpg"
                 },
                 {
                     id: 15,
                     usuarioId: 4,
                     nombreUsuario: "TomiPaginas",
                     texto: "La portada se ve linda y el precio está claro.",
-                    imagenPerfil: "https://placehold.co/50x50?text=TP"
+                    imagenPerfil: "/images/chico2.jpg"
                 }
             ]
         },
@@ -211,21 +211,21 @@ const data = {
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Un clásico total, suma mucho tenerlo en el catálogo.",
-                    imagenPerfil: "https://placehold.co/50x50?text=MN"
+                    imagenPerfil: "/images/chico1.jpg"
                 },
                 {
                     id: 17,
                     usuarioId: 3,
                     nombreUsuario: "SofiLibros",
                     texto: "Muy buena opción para una tienda de libros.",
-                    imagenPerfil: "https://placehold.co/50x50?text=SL"
+                    imagenPerfil: "/images/chica2.jpg"
                 },
                 {
                     id: 18,
                     usuarioId: 5,
                     nombreUsuario: "ValeLectora",
                     texto: "Ideal para quienes buscan literatura clásica.",
-                    imagenPerfil: "https://placehold.co/50x50?text=VL"
+                    imagenPerfil: "/images/chica3.jpg"
                 }
             ]
         },
@@ -243,21 +243,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "De los mejores libros que leí, gran incorporación.",
-                    imagenPerfil: "https://placehold.co/50x50?text=LR"
+                    imagenPerfil: "/images/chica1.jpg"
                 },
                 {
                     id: 20,
                     usuarioId: 4,
                     nombreUsuario: "TomiPaginas",
                     texto: "La portada y la descripción invitan a leerlo.",
-                    imagenPerfil: "https://placehold.co/50x50?text=TP"
+                    imagenPerfil: "/images/chico2.jpg"
                 },
                 {
                     id: 21,
                     usuarioId: 5,
                     nombreUsuario: "ValeLectora",
                     texto: "Muy recomendado para quienes aman el suspenso.",
-                    imagenPerfil: "https://placehold.co/50x50?text=VL"
+                    imagenPerfil: "/images/chica3.jpg"
                 }
             ]
         },
@@ -275,21 +275,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "Muy entretenido, ideal para público joven.",
-                    imagenPerfil: "https://placehold.co/50x50?text=LR"
+                    imagenPerfil: "/images/chica1.jpg"
                 },
                 {
                     id: 23,
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Me gusta que haya variedad de géneros.",
-                    imagenPerfil: "https://placehold.co/50x50?text=MN"
+                    imagenPerfil: "/images/chico1.jpg"
                 },
                 {
                     id: 24,
                     usuarioId: 4,
                     nombreUsuario: "TomiPaginas",
                     texto: "Buen precio y libro muy conocido.",
-                    imagenPerfil: "https://placehold.co/50x50?text=TP"
+                    imagenPerfil: "/images/chico2.jpg"
                 }
             ]
         },
@@ -307,21 +307,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "Muy buscado hoy en día, excelente para sumar al sitio.",
-                    imagenPerfil: "https://placehold.co/50x50?text=LR"
+                    imagenPerfil: "/images/chica1.jpg"
                 },
                 {
                     id: 26,
                     usuarioId: 3,
                     nombreUsuario: "SofiLibros",
                     texto: "La descripción resume muy bien de qué trata.",
-                    imagenPerfil: "https://placehold.co/50x50?text=SL"
+                    imagenPerfil: "/images/chica2.jpg"
                 },
                 {
                     id: 27,
                     usuarioId: 5,
                     nombreUsuario: "ValeLectora",
                     texto: "Perfecto para la sección de desarrollo personal.",
-                    imagenPerfil: "https://placehold.co/50x50?text=VL"
+                    imagenPerfil: "/images/chica3.jpg"
                 }
             ]
         },
@@ -339,21 +339,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "Gran novela de fantasía, muy recomendable.",
-                    imagenPerfil: "https://placehold.co/50x50?text=LR"
+                    imagenPerfil: "/images/chica1.jpg"
                 },
                 {
                     id: 29,
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Muy buena elección para completar el catálogo.",
-                    imagenPerfil: "https://placehold.co/50x50?text=MN"
+                    imagenPerfil: "/images/chico1.jpg"
                 },
                 {
                     id: 30,
                     usuarioId: 4,
                     nombreUsuario: "TomiPaginas",
                     texto: "Me gusta que haya clásicos y fantasía moderna juntos.",
-                    imagenPerfil: "https://placehold.co/50x50?text=TP"
+                    imagenPerfil: "/images/chico2.jpg"
                 }
             ]
         }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,54 +15,59 @@
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
 </head>
+
 <body>
 	<!-- Header -->
 	<%- include('./partials/header') %>
-	<!-- /Header -->
+		<!-- /Header -->
 
-	<!-- product detail -->
-	<div class="container products-wrapper">
-		<div class="d-flex align-items-center">
-			<h2 class="products-title">Nombre del producto</h2>
-			<p class="product-detail-description">
-				<a href="/product/edit/<%= product.id %>">Editar</a>
-			</p>
-		</div>
-		<div class="product-detail">
-			<div class="row">
-				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= product.imagen %>" alt="<%= product.nombre %>" class="product-detail-img">
-					<p class="product-detail-description">
-            <%= product.descripcion %>
-					</p>
-				</article>
-				<div class="col-12 col-lg-4">
-          <section class="comments"></section>
-            <% for (let i = 0; i < product.cantidadComentarios; i++) { %>
-              <article>
-                <img class="foto-perfil"  src="<%= product.comentarios[i].imagenPerfil %>" alt="<%= product.comentarios[i].nombreUsuario %>">
-                <div class="data">
-                  <p class="user">
-                  <strong> <a href="/profile/<%= product.comentarios[i].usuarioId %>">Nombre usuario: </a> </strong> <!-- ABI FIJATE DE HACER UNA RUTA DE PERFIL/ID PARA REDIRIGIR EL COMENTARIO AL PERFIL-->
-                  <%= product.comentarios[i].texto %>
-                  </p>
-                </div>
-              </article>
-              <% } %>
-					</section>
-					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
-					<hr>
+		<!-- product detail -->
+		<div class="container products-wrapper">
+			<div class="d-flex align-items-center">
+				<h2 class="products-title">Nombre del producto</h2>
+				<p class="product-detail-description">
+					<a href="/product/edit/<%= product.id %>">Editar</a>
+				</p>
+			</div>
+			<div class="product-detail">
+				<div class="row">
+					<article class="col-12 col-lg-8 product-detail-info">
+						<img src="<%= product.imagen %>" alt="<%= product.nombre %>" class="product-detail-img">
+						<p class="product-detail-description">
+							<%= product.descripcion %>
+						</p>
+					</article>
+					<div class="col-12 col-lg-4">
+						<section class="comments"></section>
+						<% for (let i=0; i < product.cantidadComentarios; i++) { %>
+							<article>
+								<img class="foto-perfil" src="<%= product.comentarios[i].imagenPerfil %>"
+									alt="<%= product.comentarios[i].nombreUsuario %>">
+								<div class="data">
+									<p class="user">
+										<strong> <a href="/profile/<%= product.comentarios[i].usuarioId %>">Nombre
+												usuario: </a> </strong>
+										<!-- ABI FIJATE DE HACER UNA RUTA DE PERFIL/ID PARA REDIRIGIR EL COMENTARIO AL PERFIL-->
+										<%= product.comentarios[i].texto %>
+									</p>
+								</div>
+							</article>
+							<% } %>
+								</section>
+								<form class="form" action="" method="GET"> <!-- DESPUÉS HAY QUE CAMBIARLO A POST-->
+									<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+									<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+								</form>
+								<hr>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- /product detail -->
+		<!-- /product detail -->
 
-	<!-- Footer -->
-	<%- include('./partials/footer') %>
-	<!-- /Footer -->
+		<!-- Footer -->
+		<%- include('./partials/footer') %>
+			<!-- /Footer -->
 </body>
+
 </html>
