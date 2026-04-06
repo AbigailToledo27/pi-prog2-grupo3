@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const data = require('../db/productos');
 
 const productController = {
     index: function (req, res) {
@@ -7,7 +8,24 @@ const productController = {
     },
     detail: function (req, res) {
         const productId = req.params.id;
+        for (let i = 0; i < data.productos.length; i++) {
+            if (data.productos[i].id == productId) {
+                return res.render('product', { title: `Detalle del producto ${data.productos[i].name}`, product: data.productos[i] });
+            }
+        }
         return res.render('product', { title: `Detalle del producto ${productId}` });
+    },
+    edit : function (req, res) {
+        const productId = req.params.id;
+        for (let i = 0; i < data.productos.length; i++) {
+            if (data.productos[i].id == productId) {
+                return res.render('product-edit', { title: `Editar producto ${data.productos[i].name}`, product: data.productos[i] });
+            }
+        }
+        return res.render('product-edit', { title: `Editar producto ${productId}` });
+    },
+    add: function (req, res) {
+        return res.render('product-add', { title: 'Cargar producto' });
     }
 }
 

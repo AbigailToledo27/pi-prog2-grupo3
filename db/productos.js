@@ -42,7 +42,7 @@ const data = {
             usuarioId: 1,
             nombre: "El principito",
             precio: 12999,
-            imagen: "images/products/libro1.webp",
+            imagen: "/images/products/libro1.webp",
             descripcion: "Clásico de Antoine de Saint-Exupéry en edición tapa blanda, ideal para lectores de todas las edades.",
             cantidadComentarios: 3,
             comentarios: [
@@ -74,7 +74,7 @@ const data = {
             usuarioId: 2,
             nombre: "Cien años de soledad",
             precio: 18500,
-            imagen: "images/products/libro2.jpg",
+            imagen: "/images/products/libro2.jpg",
             descripcion: "La obra más reconocida de Gabriel García Márquez, indispensable en cualquier biblioteca.",
             cantidadComentarios: 3,
             comentarios: [
@@ -106,7 +106,7 @@ const data = {
             usuarioId: 3,
             nombre: "Orgullo y prejuicio",
             precio: 15490,
-            imagen: "images/products/libro3.png",
+            imagen: "/images/products/libro3.png",
             descripcion: "La famosa novela de Jane Austen, con romance, ironía y crítica social.",
             cantidadComentarios: 3,
             comentarios: [
@@ -138,7 +138,7 @@ const data = {
             usuarioId: 4,
             nombre: "1984",
             precio: 14200,
-            imagen: "images/products/libro4.webp",
+            imagen: "/images/products/libro4.webp",
             descripcion: "Distopía clásica de George Orwell, ideal para lectores que disfrutan novelas intensas y reflexivas.",
             cantidadComentarios: 3,
             comentarios: [
@@ -170,7 +170,7 @@ const data = {
             usuarioId: 5,
             nombre: "Harry Potter y la piedra filosofal",
             precio: 21999,
-            imagen: "images/products/libro5.webp",
+            imagen: "/images/products/libro5.webp",
             descripcion: "Primer libro de la saga de J.K. Rowling, perfecto para fanáticos de la fantasía.",
             cantidadComentarios: 3,
             comentarios: [
@@ -202,7 +202,7 @@ const data = {
             usuarioId: 1,
             nombre: "Don Quijote de la Mancha",
             precio: 19990,
-            imagen: "images/products/libro6.webp",
+            imagen: "/images/products/libro6.webp",
             descripcion: "Obra maestra de Cervantes, ideal para colección o lectura académica.",
             cantidadComentarios: 3,
             comentarios: [
@@ -234,7 +234,7 @@ const data = {
             usuarioId: 2,
             nombre: "La sombra del viento",
             precio: 17600,
-            imagen: "images/products/libro7.webp",
+            imagen: "/images/products/libro7.webp",
             descripcion: "Novela de Carlos Ruiz Zafón con misterio, emoción y amor por los libros.",
             cantidadComentarios: 3,
             comentarios: [
@@ -266,7 +266,7 @@ const data = {
             usuarioId: 3,
             nombre: "Los juegos del hambre",
             precio: 16750,
-            imagen: "images/products/libro8.webp",
+            imagen: "/images/products/libro8.webp",
             descripcion: "Primera parte de la saga juvenil de Suzanne Collins, con acción y una lectura muy ágil.",
             cantidadComentarios: 3,
             comentarios: [
@@ -298,7 +298,7 @@ const data = {
             usuarioId: 4,
             nombre: "Hábitos atómicos",
             precio: 18900,
-            imagen: "images/products/libro9.webp",
+            imagen: "/images/products/libro9.webp",
             descripcion: "Libro de James Clear sobre productividad, hábitos y mejora personal.",
             cantidadComentarios: 3,
             comentarios: [
@@ -330,7 +330,7 @@ const data = {
             usuarioId: 5,
             nombre: "El nombre del viento",
             precio: 20800,
-            imagen: "images/products/libro10.webp",
+            imagen: "/images/products/libro10.webp",
             descripcion: "Novela de fantasía de Patrick Rothfuss, con gran construcción de mundo y protagonista memorable.",
             cantidadComentarios: 3,
             comentarios: [
