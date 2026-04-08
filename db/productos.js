@@ -1,39 +1,46 @@
 const data = {
+    usuario: {
+        id: 0,
+        email: "gasparburgi49@gmail.com",
+        usuario: "GasparBurgi",
+        contrasena: "123456",
+        fotoPerfil: "/images/users/chico1.jpg"
+    },
     usuarios: [
         {
             id: 1,
             email: "lucia.reader@gmail.com",
             usuario: "LuciaReader",
             contrasena: "123456",
-            fotoPerfil: "/images/chica1.jpg"
+            fotoPerfil: "/images/users/chica1.jpg"
         },
         {
             id: 2,
             email: "mateo.novelas@gmail.com",
             usuario: "MateoNovelas",
             contrasena: "123456",
-            fotoPerfil: "/images/chico1.jpg"
+            fotoPerfil: "/images/users/chico1.jpg"
         },
         {
             id: 3,
             email: "sofia.libros@gmail.com",
             usuario: "SofiLibros",
             contrasena: "123456",
-            fotoPerfil: "/images/chica2.jpg"
+            fotoPerfil: "/images/users/chica2.jpg"
         },
         {
             id: 4,
             email: "tomas.paginas@gmail.com",
             usuario: "TomiPaginas",
             contrasena: "123456",
-            fotoPerfil: "/images/chico2.jpg"
+            fotoPerfil: "/images/users/chico2.jpg"
         },
         {
             id: 5,
             email: "valentina.lectora@gmail.com",
             usuario: "ValeLectora",
             contrasena: "123456",
-            fotoPerfil: "/images/chica3.jpg"
+            fotoPerfil: "/images/users/chica3.jpg"
         }
     ],
     productos: [
