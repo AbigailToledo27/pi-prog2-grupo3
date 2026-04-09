@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 const data = require("../db/productos");
+const usuario = require('../db/productos').usuario;
 
 const indexController = {
     index: function (req, res) {
-        return res.render('index', { title: 'Home', productos: data.productos });
+        return res.render('index', { title: 'Home', productos: data.productos, logueado:false, usuario:usuario });
     }
 }
 
