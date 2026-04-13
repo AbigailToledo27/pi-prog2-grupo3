@@ -12,5 +12,6 @@ router.get('/register', usuarioController.registerForm);
 router.get('/register/ingresar', usuarioController.registerSubmit);
 router.get('/profile', usuarioController.perfilUsuario);
 router.get('/profile/:id', usuarioController.perfil);
+router.get('/cerrarSesion', usuarioController.cerrarSesion);
 
 module.exports = router;
