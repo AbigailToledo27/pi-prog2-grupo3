@@ -20,7 +20,7 @@ const productController = {
         const productId = req.params.id;
         for (let i = 0; i < data.productos.length; i++) {
             if (data.productos[i].id == productId) {
-                return res.render('product-edit', { title: `Editar producto ${data.productos[i].name}`, product: data.productos[i] });
+                return res.render('product-edit', { title: `Editar producto ${data.productos[i].name}`, product: data.productos[i], usuario:usuario, logueado:true });
             }
         }
         return res.render('product-edit', { title: `Editar producto ${productId}` });

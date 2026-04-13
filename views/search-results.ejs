@@ -19,23 +19,41 @@
 <body>
 	<!-- Header -->
 	<%- include('./partials/header') %>
-	<!-- /Header -->
+		<!-- /Header -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title"><%= title %></h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-      <% for( let i = 0; i < results.length; i++ ) { %>
-        <h2 class="col-12">
-          <a href="/product/<%= results[i].id %>"><%= results[i].nombre %></a>
-        </h2>
-      <% } %>
-	<!-- Footer -->
-	<%- include('./partials/footer') %>
-	<!-- /Footer -->
+		<!-- Novedades -->
+		<div class="container products-wrapper">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="products-title">
+						<%= title %>
+					</h2>
+				</div>
+				<!-- Show the "ultimos" products -->
+				<% for( let i=0; i < results.length; i++ ) { %>
+					<div class="col-12 col-sm-5 col-lg-3">
+						<section class="product-box">
+							<a href="/product/detail/<%= results[i].id %>">
+								<figure class="product-box_image">
+									<img src="<%= results[i].imagen %>" alt="<%= results[i].nombre %>">
+								</figure>
+								<article class="product-box_data">
+									<h2>
+										<%= results[i].nombre %>
+									</h2>
+									<p>
+										<%= results[i].descripcion %>
+									</p>
+									<p>Comentarios: <%= results[i].cantidadComentarios %>
+									</p>
+								</article>
+							</a>
+						</section>
+					</div>
+					<% } %>
+						<!-- Footer -->
+						<%- include('./partials/footer') %>
+							<!-- /Footer -->
 </body>
 
 </html>

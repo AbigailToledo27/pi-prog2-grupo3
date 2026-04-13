@@ -19,25 +19,25 @@
 <body>
 	<!-- Header -->
 	<%- include('./partials/header') %>
-	<!-- /Header -->
+		<!-- /Header -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Agregar productos</h2>
-			</div>
-			<!-- formulario para agregar productos -->
-				<form action="/users/profile" method="GET">
+		<!-- Novedades -->
+		<div class="container products-wrapper">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="products-title">Agregar productos</h2>
+				</div>
+				<!-- formulario para agregar productos -->
+				<form action="/users/profile" method="GET" class="productForm">
 					<input type="text" name="nombre" placeholder="Nombre del producto">
-          <input type="text" name="descripcion" placeholder="Descripción del producto">
-          <input type="text" name="imagen" placeholder="URL de la imagen del producto">
-          <button type="submit">Agregar producto</button>
+					<input type="text" name="descripcion" placeholder="Descripción del producto">
+					<input type="text" name="imagen" placeholder="URL de la imagen del producto">
+					<button type="submit">Agregar producto</button>
 				</form>
 
-	<!-- Footer -->
-	<%- include('./partials/footer') %>
-	<!-- /Footer -->
+				<!-- Footer -->
+				<%- include('./partials/footer') %>
+					<!-- /Footer -->
 
 </body>
 
