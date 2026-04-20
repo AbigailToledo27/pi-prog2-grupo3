@@ -5,9 +5,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
+	<link width="" rel="shortcut icon" href="./images/logoSolo.png" />
 
-	<title> Mercado Liebre Argentina</title>
+	<title> Mercado Libros Argentina</title>
 	<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
@@ -27,14 +27,13 @@
 			<div class="col-12">
 				<h2 class="products-title">Editar datos del producto</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario para modificar datos de un producto del catálogo. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos. <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
 
+			<form action ="/users/profile" method="GET" class="productForm">
+					<input type="text" name="nombre" placeholder="Nombre del producto" value="<%= product.nombre %>">
+					<input type="text" name="descripcion" placeholder="Descripción del producto" value="<%= product.descripcion %>">
+					<input type="text" name="imagen" placeholder="URL de la imagen del producto" value="<%= product.imagen %>">
+					<button type="submit">Modificar producto</button>
+				</form>
 
 	<!-- Footer -->
 	<%- include('./partials/footer') %>

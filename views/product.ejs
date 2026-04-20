@@ -5,9 +5,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
+	<link width="" rel="shortcut icon" href="./images/logoSolo.png" />
 
-	<title> Mercado Liebre Argentina</title>
+	<title> Mercado Libros Argentina</title>
 	<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
@@ -38,27 +38,31 @@
 						</p>
 					</article>
 					<div class="col-12 col-lg-4">
-						<section class="comments"></section>
-						<% for (let i=0; i < product.cantidadComentarios; i++) { %>
-							<article>
-								<img class="foto-perfil" src="<%= product.comentarios[i].imagenPerfil %>"
-									alt="<%= product.comentarios[i].nombreUsuario %>">
-								<div class="data">
-									<p class="user">
-										<strong> <a href="/users/profile/<%= product.comentarios[i].usuarioId %>">Nombre
-												usuario: </a> </strong>
-										<!-- ABI FIJATE DE HACER UNA RUTA DE PERFIL/ID PARA REDIRIGIR EL COMENTARIO AL PERFIL-->
-										<%= product.comentarios[i].texto %>
-									</p>
-								</div>
-							</article>
-							<% } %>
-								</section>
-								<form class="form" action="" method="GET"> <!-- DESPUÉS HAY QUE CAMBIARLO A POST-->
-									<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-									<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-								</form>
-								<hr>
+						<section class="comments">
+							<h3 class="comments-title">Comentarios</h3>
+							<% for (let i=0; i < product.cantidadComentarios; i++) { %>
+								<article>
+									<img class="foto-perfil" src="<%= product.comentarios[i].imagenPerfil %>"
+										alt="<%= product.comentarios[i].nombreUsuario %>">
+									<div class="data">
+										<p class="user">
+											<strong> <a href="/users/profile/<%= product.comentarios[i].usuarioId %>">
+													<%= product.comentarios[i].nombreUsuario %>
+												</a> </strong>
+											<span>
+												<%= product.comentarios[i].texto %>
+											</span>
+										</p>
+									</div>
+								</article>
+								<% } %>
+						</section>
+
+						<form class="form" action="" method="GET"> <!-- DESPUÉS HAY QUE CAMBIARLO A POST-->
+							<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</form>
+						<hr>
 					</div>
 				</div>
 			</div>

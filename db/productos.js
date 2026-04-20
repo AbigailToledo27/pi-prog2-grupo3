@@ -58,21 +58,21 @@ const data = {
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Muy linda edición, me llegó en perfecto estado.",
-                    imagenPerfil: "/images/chico1.jpg"
+                    imagenPerfil: "/images/users/chico1.jpg"
                 },
                 {
                     id: 2,
                     usuarioId: 3,
                     nombreUsuario: "SofiLibros",
                     texto: "Un clásico hermoso para regalar o releer.",
-                    imagenPerfil: "/images/chica2.jpg"
+                    imagenPerfil: "/images/users/chica2.jpg"
                 },
                 {
                     id: 3,
                     usuarioId: 5,
                     nombreUsuario: "ValeLectora",
                     texto: "La descripción coincide y el libro se ve muy lindo.",
-                    imagenPerfil: "/images/chica3.jpg"
+                    imagenPerfil: "/images/users/chica3.jpg"
                 }
             ]
         },
@@ -90,21 +90,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "Uno de mis libros favoritos, gran elección para el catálogo.",
-                    imagenPerfil: "/images/chica1.jpg"
+                    imagenPerfil: "/images/users/chica1.jpg"
                 },
                 {
                     id: 5,
                     usuarioId: 4,
                     nombreUsuario: "TomiPaginas",
                     texto: "Muy buena novela, súper recomendable.",
-                    imagenPerfil: "/images/chico2.jpg"
+                    imagenPerfil: "/images/users/chico2.jpg"
                 },
                 {
                     id: 6,
                     usuarioId: 5,
                     nombreUsuario: "ValeLectora",
                     texto: "Buen precio para un libro tan importante.",
-                    imagenPerfil: "/images/chica3.jpg"
+                    imagenPerfil: "/images/users/chica3.jpg"
                 }
             ]
         },
@@ -122,21 +122,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "Hermosa historia, ideal para quienes aman los clásicos.",
-                    imagenPerfil: "/images/chica1.jpg"
+                    imagenPerfil: "/images/users/chica1.jpg"
                 },
                 {
                     id: 8,
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Muy linda edición para tener en la biblioteca.",
-                    imagenPerfil: "/images/chico2.jpg"
+                    imagenPerfil: "/images/users/chico1.jpg"
                 },
                 {
                     id: 9,
                     usuarioId: 4,
                     nombreUsuario: "TomiPaginas",
                     texto: "Gran libro y muy buena descripción.",
-                    imagenPerfil: "/images/chico2.jpg"
+                    imagenPerfil: "/images/users/chico2.jpg"
                 }
             ]
         },
@@ -154,21 +154,21 @@ const data = {
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Libro indispensable, siempre vale la pena leerlo.",
-                    imagenPerfil: "/images/chico1.jpg"
+                    imagenPerfil: "/images/users/chico1.jpg"
                 },
                 {
                     id: 11,
                     usuarioId: 3,
                     nombreUsuario: "SofiLibros",
                     texto: "Muy buena opción para sumar variedad al sitio.",
-                    imagenPerfil: "/images/chica2.jpg"
+                    imagenPerfil: "/images/users/chica2.jpg"
                 },
                 {
                     id: 12,
                     usuarioId: 5,
                     nombreUsuario: "ValeLectora",
                     texto: "Ideal para quienes disfrutan las distopías.",
-                    imagenPerfil: "/images/chica3.jpg"
+                    imagenPerfil: "/images/users/chica3.jpg"
                 }
             ]
         },
@@ -186,21 +186,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "Perfecto para quienes aman Harry Potter.",
-                    imagenPerfil: "/images/chica1.jpg"
+                    imagenPerfil: "/images/users/chica1.jpg"
                 },
                 {
                     id: 14,
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Muy buena elección para un catálogo juvenil.",
-                    imagenPerfil: "/images/chico1.jpg"
+                    imagenPerfil: "/images/users/chico1.jpg"
                 },
                 {
                     id: 15,
                     usuarioId: 4,
                     nombreUsuario: "TomiPaginas",
                     texto: "La portada se ve linda y el precio está claro.",
-                    imagenPerfil: "/images/chico2.jpg"
+                    imagenPerfil: "/images/users/chico2.jpg"
                 }
             ]
         },
@@ -218,21 +218,21 @@ const data = {
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Un clásico total, suma mucho tenerlo en el catálogo.",
-                    imagenPerfil: "/images/chico1.jpg"
+                    imagenPerfil: "/images/users/chico1.jpg"
                 },
                 {
                     id: 17,
                     usuarioId: 3,
                     nombreUsuario: "SofiLibros",
                     texto: "Muy buena opción para una tienda de libros.",
-                    imagenPerfil: "/images/chica2.jpg"
+                    imagenPerfil: "/images/users/chica2.jpg"
                 },
                 {
                     id: 18,
                     usuarioId: 5,
                     nombreUsuario: "ValeLectora",
                     texto: "Ideal para quienes buscan literatura clásica.",
-                    imagenPerfil: "/images/chica3.jpg"
+                    imagenPerfil: "/images/users/chica3.jpg"
                 }
             ]
         },
@@ -250,21 +250,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "De los mejores libros que leí, gran incorporación.",
-                    imagenPerfil: "/images/chica1.jpg"
+                    imagenPerfil: "/images/users/chica1.jpg"
                 },
                 {
                     id: 20,
                     usuarioId: 4,
                     nombreUsuario: "TomiPaginas",
                     texto: "La portada y la descripción invitan a leerlo.",
-                    imagenPerfil: "/images/chico2.jpg"
+                    imagenPerfil: "/images/users/chico2.jpg"
                 },
                 {
                     id: 21,
                     usuarioId: 5,
                     nombreUsuario: "ValeLectora",
                     texto: "Muy recomendado para quienes aman el suspenso.",
-                    imagenPerfil: "/images/chica3.jpg"
+                    imagenPerfil: "/images/users/chica3.jpg"
                 }
             ]
         },
@@ -282,21 +282,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "Muy entretenido, ideal para público joven.",
-                    imagenPerfil: "/images/chica1.jpg"
+                    imagenPerfil: "/images/users/chica1.jpg"
                 },
                 {
                     id: 23,
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Me gusta que haya variedad de géneros.",
-                    imagenPerfil: "/images/chico1.jpg"
+                    imagenPerfil: "/images/users/chico1.jpg"
                 },
                 {
                     id: 24,
                     usuarioId: 4,
                     nombreUsuario: "TomiPaginas",
                     texto: "Buen precio y libro muy conocido.",
-                    imagenPerfil: "/images/chico2.jpg"
+                    imagenPerfil: "/images/users/chico2.jpg"
                 }
             ]
         },
@@ -314,21 +314,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "Muy buscado hoy en día, excelente para sumar al sitio.",
-                    imagenPerfil: "/images/chica1.jpg"
+                    imagenPerfil: "/images/users/chica1.jpg"
                 },
                 {
                     id: 26,
                     usuarioId: 3,
                     nombreUsuario: "SofiLibros",
                     texto: "La descripción resume muy bien de qué trata.",
-                    imagenPerfil: "/images/chica2.jpg"
+                    imagenPerfil: "/images/users/chica2.jpg"
                 },
                 {
                     id: 27,
                     usuarioId: 5,
                     nombreUsuario: "ValeLectora",
                     texto: "Perfecto para la sección de desarrollo personal.",
-                    imagenPerfil: "/images/chica3.jpg"
+                    imagenPerfil: "/images/users/chica3.jpg"
                 }
             ]
         },
@@ -346,21 +346,21 @@ const data = {
                     usuarioId: 1,
                     nombreUsuario: "LuciaReader",
                     texto: "Gran novela de fantasía, muy recomendable.",
-                    imagenPerfil: "/images/chica1.jpg"
+                    imagenPerfil: "/images/users/chica1.jpg"
                 },
                 {
                     id: 29,
                     usuarioId: 2,
                     nombreUsuario: "MateoNovelas",
                     texto: "Muy buena elección para completar el catálogo.",
-                    imagenPerfil: "/images/chico1.jpg"
+                    imagenPerfil: "/images/users/chico1.jpg"
                 },
                 {
                     id: 30,
                     usuarioId: 4,
                     nombreUsuario: "TomiPaginas",
                     texto: "Me gusta que haya clásicos y fantasía moderna juntos.",
-                    imagenPerfil: "/images/chico2.jpg"
+                    imagenPerfil: "/images/users/chico2.jpg"
                 }
             ]
         }

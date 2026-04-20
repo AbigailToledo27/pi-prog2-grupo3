@@ -16,7 +16,7 @@ const productController = {
         }
         return res.render('product', { title: `Detalle del producto ${productId}`, logueado:true, usuario:usuario });
     },
-    edit : function (req, res) {
+    edit: function (req, res) {
         const productId = req.params.id;
         for (let i = 0; i < data.productos.length; i++) {
             if (data.productos[i].id == productId) {
@@ -29,7 +29,7 @@ const productController = {
         return res.render('product-add', { title: 'Cargar producto', logueado: true, usuario:usuario });
     },
     search: function (req, res) {
-        const searchTerm = req.query.busqueda;
+        const searchTerm = req.query.search;
         ids = [5,9];
         results =[];
         for (let i = 0; i < data.productos.length; i++) {

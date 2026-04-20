@@ -184,7 +184,15 @@ hr {
   background: linear-gradient(135deg, var(--secondary), #214d50);
   color: #fef7ef;
   font-size: 1.8em;
+  cursor: pointer;
   box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.btn-toggle-navbar:hover {
+  transform: translateY(-2px);
+  opacity: 0.96;
+  box-shadow: 0 18px 30px rgba(35, 77, 80, 0.22);
 }
 
 .main-navbar {
@@ -197,35 +205,41 @@ hr {
   box-shadow: var(--shadow-soft);
 }
 
+.main-navbar.active {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .left-navbar,
 .right-navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   font-size: 1.45em;
 }
 
+.left-navbar a,
+.right-navbar a,
 .logout {
+  padding: 10px 0;
+  border: none;
+  border-bottom: solid 1px rgba(31, 41, 51, 0.08);
   background: transparent;
-  border: 0;
-  cursor: pointer;
+  color: var(--muted);
   font-size: 1em;
   font-weight: 700;
-  color: var(--muted);
+  cursor: pointer;
 }
 
+.left-navbar a:hover,
+.right-navbar a:hover,
 .logout:hover {
   color: var(--accent);
 }
 
-.left-navbar a,
-.right-navbar a {
-  padding: 10px 0;
-  font-weight: 700;
-  color: var(--muted);
-  border-bottom: solid 1px rgba(31, 41, 51, 0.08);
-}
-
-.left-navbar a:hover,
-.right-navbar a:hover {
-  color: var(--accent);
+.right-navbar form {
+  margin: 0;
 }
 
 .banner {
@@ -495,6 +509,70 @@ hr {
   padding: 0 28px 28px;
 }
 
+/* =========================
+  Grilla de productos ordenada
+========================= */
+
+.product-list {
+  row-gap: 38px;
+}
+
+.product-list .product-column {
+  display: flex;
+}
+
+.product-list .product-box {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.product-list .product-box a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-list .product-box_image {
+  height: 300px;
+  min-height: 280px;
+  aspect-ratio: auto;
+  padding: 30px 24px;
+}
+
+.product-list .product-box_image img {
+  width: 100%;
+  height: 100%;
+  max-width: 185px;
+  max-height: 245px;
+  margin: 0 auto;
+  padding: 0;
+  object-fit: contain;
+  object-position: center;
+}
+
+.product-list .product-box_data {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 26px 24px;
+}
+
+.product-list .product-box_data h2 {
+  min-height: 40px;
+  margin-bottom: 14px;
+}
+
+.product-list .product-box_data p:first-of-type {
+  min-height: 126px;
+  margin-bottom: 18px;
+}
+
+.product-list .product-box_data p:last-of-type {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
 .small {
   font-size: 1.6em;
   color: var(--success);
@@ -598,9 +676,20 @@ hr {
 }
 
 .comments .user {
-  font-size: 1.6em;
+  margin: 0 0 6px;
+  font-size: 1.65em;
+  line-height: 1.25;
   font-weight: 800;
   color: var(--ink);
+}
+
+.comments .user span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.92em;
+  font-weight: 500;
+  line-height: 1.55;
 }
 
 .form-label {
@@ -665,7 +754,7 @@ textarea.form-input {
 }
 
 /* =========================
-   Formularios internos
+  Formularios internos
 ========================= */
 
 .authForm,
@@ -778,6 +867,177 @@ textarea.form-input {
   opacity: 0.96;
 }
 
+/* =========================
+  Ajustes visuales: perfil + comentarios
+========================= */
+
+/* Foto grande del perfil de usuario */
+.info-usuario .img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-usuario .foto-perfil {
+  width: 120px;
+  height: 120px;
+  max-width: 120px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 4px solid rgba(217, 108, 79, 0.25);
+  box-shadow: 0 14px 28px rgba(51, 38, 24, 0.14);
+  background-color: var(--surface-strong);
+}
+
+.info-usuario .data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-usuario .main-title {
+  margin: 0 0 6px;
+  font-size: 3.4em;
+}
+
+.info-usuario ul li {
+  font-size: 1.1em;
+  color: var(--muted);
+}
+
+/* Botón seguir más dinámico */
+.info-usuario .btn,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--secondary), #234d50);
+  color: #fff9f3;
+  font-size: 1.25em;
+  font-weight: 800;
+  box-shadow: 0 14px 24px rgba(35, 77, 80, 0.18);
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.info-usuario .btn:hover,
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 18px 30px rgba(35, 77, 80, 0.24);
+  opacity: 0.96;
+}
+
+/* =========================
+  Comentarios del detalle de producto
+========================= */
+
+.comments {
+  padding: 28px 24px 12px;
+}
+
+.comments article {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid rgba(31, 41, 51, 0.08);
+  border-radius: var(--radius-md);
+  background: rgba(255, 250, 243, 0.72);
+  box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.comments article:hover {
+  transform: translateY(-2px);
+  border-color: rgba(217, 108, 79, 0.22);
+  box-shadow: 0 18px 34px rgba(51, 38, 24, 0.12);
+}
+
+/* Foto chica del usuario que comenta */
+.comments .foto-perfil,
+.comments img.foto-perfil {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  max-width: 58px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 3px solid rgba(217, 108, 79, 0.22);
+  background-color: var(--surface-strong);
+  box-shadow: 0 10px 18px rgba(51, 38, 24, 0.12);
+}
+
+.comments .data {
+  width: 100%;
+}
+
+.comments .user {
+  margin: 0 0 6px;
+  font-size: 1.65em;
+  line-height: 1.25;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.comments .user a {
+  color: var(--secondary);
+  transition: color 180ms ease;
+}
+
+.comments .user a:hover {
+  color: var(--accent);
+}
+
+.comments p {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* Si el texto del comentario está dentro del mismo p.user */
+.comments .user strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Formulario de comentario */
+.product-detail .form {
+  padding: 8px 24px 28px;
+}
+
+.product-detail .form-input {
+  height: 52px;
+  font-size: 1.5em;
+  border-radius: 999px;
+}
+
+.product-detail .buy-now-button {
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.35em;
+  letter-spacing: 0.04em;
+}
+
+.product-detail .buy-now-button:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 18px 30px rgba(169, 73, 48, 0.28);
+}
+
+/* Imagen principal del producto, para que no explote visualmente */
+.product-detail-img {
+  width: auto;
+  max-width: 78%;
+  max-height: 430px;
+  object-fit: contain;
+  object-position: center;
+}
+
 /* Responsive */
 
 @media (max-width: 767px) {
@@ -798,6 +1058,59 @@ textarea.form-input {
   .productForm button {
     width: 100%;
   }
+
+  .info-usuario .row {
+    text-align: center;
+  }
+
+  .info-usuario .img-container,
+  .info-usuario .data-container {
+    margin-left: 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .info-usuario .foto-perfil {
+    width: 96px;
+    height: 96px;
+    max-width: 96px;
+    margin-bottom: 16px;
+  }
+
+  .info-usuario .d-flex {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .info-usuario .btn {
+    margin-left: 0 !important;
+    margin-top: 12px !important;
+  }
+
+  .comments {
+    padding: 22px 18px 10px;
+  }
+
+  .comments article {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .comments .foto-perfil,
+  .comments img.foto-perfil {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    max-width: 50px;
+  }
+
+  .comments .user {
+    font-size: 1.5em;
+  }
+
+  .comments p {
+    font-size: 1.4em;
+  }
 }
 
 @media (min-width: 768px) {
@@ -816,27 +1129,36 @@ textarea.form-input {
     display: none;
   }
 
-  .main-navbar,
-  .left-navbar,
-  .right-navbar {
+  .main-navbar {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
 
   .left-navbar,
   .right-navbar {
-    gap: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
   }
 
   .left-navbar a,
-  .right-navbar a {
+  .right-navbar a,
+  .logout {
     padding: 0;
     border-bottom: none;
   }
 
   .product-box_data {
     min-height: 220px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-list .product-column {
+    flex: 0 0 20%;
+    max-width: 20%;
   }
 }
