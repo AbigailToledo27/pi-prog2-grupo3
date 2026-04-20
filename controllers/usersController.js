@@ -7,16 +7,16 @@ const usuarioController = {
         return res.render('login',{title:'Iniciar sesión', logueado: false, usuario:usuario})
     },
     loginSubmit: function(req,res) {
-        return res.render('index',{title:'Iniciar sesión', productos: productos, logueado: true, usuario:usuario}) 
+        return res.render('index',{title:'Iniciar sesión', productos: productos, logueado: true, usuario:usuario})
     },
     registerForm: function(req,res) {
         return res.render('register',{title:'Crear cuenta', logueado: false, usuario:usuario})
     },
     registerSubmit: function(req,res) {
-        return res.render('login',{title:'Iniciar sesión', logueado: false, usuario:usuario}) 
+        return res.render('login',{title:'Iniciar sesión', logueado: false, usuario:usuario})
     },
     cerrarSesion: function(req,res) {
-        return res.render('index',{title:'Home', productos: productos, logueado: false, usuario:usuario}) 
+        return res.render('index',{title:'Home', productos: productos, logueado: false, usuario:usuario})
     },
     perfilUsuario: function(req,res) {
         return res.render('profile',{usuario:usuario, productos: productos, logueado: true})
