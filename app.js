@@ -7,6 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
+var commentRouter = require('./routes/comments');
+let db = require("./database/models");
 
 var app = express();
 
@@ -20,11 +22,41 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function(req, res, next) {
+  res.locals.user = false;
+
+  if (req.session.user != undefined) {
+    res.locals.user = req.session.user;
+    return next();
+  }
+
+  if (req.cookies.userId != undefined) {
+    db.User.findByPk(req.cookies.userId)
+      .then(function(user) {
+        if (user != null) {
+          req.session.user = {
+            id: user.id,
+            name: user.name,
+            email: user.email
+          };
+
+          res.locals.user = req.session.user;
+        }
+
+        return next();
+      })
+      .catch(function(error) {
+        return next(error);
+      });
+  } else {
+    return next();
+  }
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product', productRouter);
-
+app.use('/comment',commentRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

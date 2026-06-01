@@ -57,11 +57,12 @@
 								</article>
 								<% } %>
 						</section>
-
-						<form class="form" action="" method="GET"> <!-- DESPUÉS HAY QUE CAMBIARLO A POST-->
-							<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+            <% if (locals.user){ %>
+							<form class="form" action="/comment/agregarComentario/<%= product.id %>" method="POST">
+								<input class="form-input" type="text" name="comentario" value="" placeholder="Agregar comentario">
 							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 						</form>
+            <% } %>
 						<hr>
 					</div>
 				</div>
