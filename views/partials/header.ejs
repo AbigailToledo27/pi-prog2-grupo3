@@ -31,13 +31,13 @@
 		<nav class="main-navbar">
 			<ul class="left-navbar">
 				<li><a href="/">Todos los productos</a></li>
-				<% if (logueado) { %>
+				<% if (locals.user != undefined) { %>
 					<li><a href="/product/add">Cargar producto</a></li>
 				<% } %>
 			</ul>
 
 			<ul class="right-navbar">
-				<% if (logueado) { %>
+				<% if (locals.user != undefined) { %>
 					<li>
 						<a href="/users/profile">
 							<%= usuario.usuario %> <i class="fas fa-user"></i>

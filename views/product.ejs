@@ -57,7 +57,7 @@
 								</article>
 								<% } %>
 						</section>
-            <% if (locals.user){ %>
+            <% if (locals.user != undefined){ %>
 							<form class="form" action="/comment/agregarComentario/<%= product.id %>" method="POST">
 								<input class="form-input" type="text" name="comentario" value="" placeholder="Agregar comentario">
 							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>

@@ -1,5 +1,4 @@
 var express = require('express');
-var router = express.Router();
 const db = require('../database/models');
 
 const productController = {
@@ -11,6 +10,9 @@ const productController = {
       let productId = req.params.id;
       let user = res.locals.user;
 
+      if (req.session.user == undefined){
+        return res.redirect('/');
+      }
       db.Comentario.create({
         productId: productId,
         userId: user.id,

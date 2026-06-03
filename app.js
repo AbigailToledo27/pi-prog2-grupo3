@@ -38,27 +38,27 @@ app.use(function(req, res, next) {
     return next();
   }
 
-  if (req.cookies.userId != undefined) {
-    db.User.findByPk(req.cookies.userId)
-      .then(function(user) {
-        if (user != null) {
-          req.session.user = {
-            id: user.id,
-            name: user.name,
-            email: user.email
-          };
+  // if (req.cookies.userId != undefined) {
+  //   db.User.findByPk(req.cookies.userId)
+  //     .then(function(user) {
+  //       if (user != null) {
+  //         req.session.user = {
+  //           id: user.id,
+  //           name: user.name,
+  //           email: user.email
+  //         };
 
-          res.locals.user = req.session.user;
-        }
+  //         res.locals.user = req.session.user;
+  //       }
 
-        return next();
-      })
-      .catch(function(error) {
-        return next(error);
-      });
-  } else {
-    return next();
-  }
+  //       return next();
+  //     })
+  //     .catch(function(error) {
+  //       return next(error);
+  //     });
+  // } else {
+  //   return next();
+  // }
 });
 
 app.use('/', indexRouter);
