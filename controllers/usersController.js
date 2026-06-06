@@ -1,6 +1,9 @@
-const usuario = require('../db/productos').usuario;
-const usuarios = require('../db/productos').usuarios;
-const productos = require('../db/productos').productos;
+//const usuario = require('../db/productos').usuario;
+//const usuarios = require('../db/productos').usuarios;
+//const productos = require('../db/productos').productos;
+const bcrypt = require('bcryptjs');
+const db = require('../database/models')
+
 
 const usuarioController = {
     loginForm: function(req,res) {

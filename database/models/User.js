@@ -49,7 +49,7 @@ module.exports = function (sequelize, DataTypes) {
     underscored: false
   }
   let Usuario = sequelize.define(alias, cols, config);
-  Uauario.associate = function(models) {
+  Usuario.associate = function(models) {
     if (models.Comentario) {
       Usuario.hasMany(models.Comentario, {
         as: 'comentarios',
