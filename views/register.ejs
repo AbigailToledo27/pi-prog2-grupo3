@@ -29,9 +29,18 @@
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
 				<form action="/users/register" method="POST" class="productForm">
-					<input type="text" name="usuario" placeholder="Usuario">
-					<input type="email" name="email" placeholder="Email">
-					<input type="password" name="password" placeholder="Contraseña">
+					<input type="text" name="usuario" placeholder="Usuario" value="<%= locals.old !== undefined && old.usuario ? old.usuario : ""  %>">
+					<% if (locals.errors && errors.usuario) { %>
+							<p class = "feedback"><%= errors.usuario.msg %></p>
+					<% } %>
+					<input type="email" name="email" placeholder="Email" value="<%= locals.old !== undefined && old.email ? old.email : ""  %>">
+					<% if (locals.errors && errors.email) { %>
+							<p class = "feedback"><%= errors.email.msg %></p>
+					<% } %>
+					<input type="password" name="password" placeholder="Contraseña" value="<%= locals.old !== undefined && old.password ? old.password : ""  %>">
+					<% if (locals.errors && errors.password) { %>
+							<p class = "feedback"><%= errors.password.msg %></p>
+					<% } %>
 					<button type="submit">Registrarse</button>
 				</form>
 

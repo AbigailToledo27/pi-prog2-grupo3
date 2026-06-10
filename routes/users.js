@@ -6,9 +6,6 @@ const db = require('../database/models');
 const bcrypt = require('bcryptjs');
 
 /* GET users listing. */
-// middleware para usuario logueado..?
-
-
 
 // Validaciones
 let validationsRegister = [
@@ -35,7 +32,7 @@ let validationsLogin = [
         .notEmpty().withMessage('Completa el email').bail()
         .isEmail().withMessage('Ingresá un email válido')
         .custom(function (value) {
-            return db.Usuario,findOne({where: {email:value}})
+            return db.Usuario.findOne({where: {email:value}})
             .then(function (usuario) {
                 if (!usuario){
                     throw new Error("El email no existe");

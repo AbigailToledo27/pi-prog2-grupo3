@@ -31,7 +31,7 @@ app.use(session(
   }
 ));
 app.use(function(req, res, next) {
-  res.locals.user = false;
+  res.locals.user = undefined;
 
   if (req.session.user != undefined) {
     res.locals.user = req.session.user;
@@ -44,7 +44,7 @@ app.use(function(req, res, next) {
          if (user != null) {
            req.session.user = {
              id: user.id,
-             name: user.name,
+             usuario: user.usuario,
              email: user.email
            };
 
