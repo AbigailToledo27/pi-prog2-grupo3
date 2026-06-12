@@ -41,5 +41,13 @@ module.exports = function (sequelize, DataTypes) {
       });
     }
   }
+  Usuario.associate = function(models) {
+    if (models.Producto) {
+      Usuario.hasMany(models.Producto, {
+        as: 'productos',
+        foreignKey: 'userId'
+      });
+    }
+  };
   return Usuario;
 }

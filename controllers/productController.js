@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const data = require('../db/productos');
 const usuario = require('../db/productos').usuario;
+const db = require('../database/models');
 
 const productController = {
     index: function (req, res) {
@@ -9,21 +10,32 @@ const productController = {
     },
     detail: function (req, res) {
         const productId = req.params.id;
-        for (let i = 0; i < data.productos.length; i++) {
-            if (data.productos[i].id == productId) {
-                return res.render('product', { title: `Detalle del producto ${data.productos[i].name}`, product: data.productos[i],logueado: true, usuario:usuario });
-            }
-        }
-        return res.render('product', { title: `Detalle del producto ${productId}`, logueado:true, usuario:usuario });
+        db.Producto.findByPk(productId, {
+            include: [
+                {association: 'usuario'},
+                {association: 'comentarios', include: [{association: 'usuario'}]}
+            ]
+        })
+        .then(function(producto) {
+            if (!producto)
+                return res.redirect('/')
+            return res.render('product', { title: `Detalle del producto ${producto.nombre}`, product: producto });
+        })
+        .catch(function(error) {
+            return res.send(error);
+        });
     },
     edit: function (req, res) {
         const productId = req.params.id;
-        for (let i = 0; i < data.productos.length; i++) {
-            if (data.productos[i].id == productId) {
-                return res.render('product-edit', { title: `Editar producto ${data.productos[i].name}`, product: data.productos[i], usuario:usuario, logueado:true });
-            }
-        }
-        return res.render('product-edit', { title: `Editar producto ${productId}`, logueado: true, usuario:usuario });
+        db.Producto.findByPk(productId)
+        .then(function(producto) {
+            if (!producto)                return res.redirect('/')
+            return res.render('product-edit', { title: `Editar producto ${producto.nombre}`, product: producto, logueado: true, usuario:usuario });
+        })
+        .catch(function(error) {
+            return res.send(error);
+        });
+
     },
     add: function (req, res) {
         return res.render('product-add', { title: 'Cargar producto', logueado: true, usuario:usuario });
