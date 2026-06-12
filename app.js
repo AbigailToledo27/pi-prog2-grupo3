@@ -30,7 +30,7 @@ app.use(session(
     saveUninitialized: true
   }
 ));
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.locals.user = undefined;
 
   if (req.session.user != undefined) {
@@ -39,39 +39,39 @@ app.use(function(req, res, next) {
   }
 
   if (req.cookies.userId != undefined) {
-     db.Usuario.findByPk(req.cookies.userId)
-       .then(function(user) {
-         if (user != null) {
-           req.session.user = {
-             id: user.id,
-             usuario: user.usuario,
-             email: user.email
-           };
+    db.Usuario.findByPk(req.cookies.userId)
+      .then(function (user) {
+        if (user != null) {
+          req.session.user = {
+            id: user.id,
+            usuario: user.usuario,
+            email: user.email
+          };
 
-           res.locals.user = req.session.user;
-         }
+          res.locals.user = req.session.user;
+        }
 
-         return next();
-       })
-       .catch(function(error) {
-         return next(error);
-       });
-   } else {
-     return next();
-   }
+        return next();
+      })
+      .catch(function (error) {
+        return next(error);
+      });
+  } else {
+    return next();
+  }
 });
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product', productRouter);
-app.use('/comment',commentRouter);
+app.use('/comment', commentRouter);
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

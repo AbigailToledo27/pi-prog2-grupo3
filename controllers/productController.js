@@ -1,25 +1,32 @@
-var express = require('express');
-var router = express.Router();
-const data = require('../db/productos');
-const usuario = require('../db/productos').usuario;
 const db = require('../database/models');
+const { validationResult } = require('express-validator');
 
 const productController = {
     index: function (req, res) {
-        return res.render('index', { title: 'Home', logueado: true, usuario:usuario });
+        return res.render('index', { 
+            title: 'Home', 
+            logueado: req.session.user != undefined, 
+            usuario: res.locals.user 
+        });
     },
     detail: function (req, res) {
         const productId = req.params.id;
         db.Producto.findByPk(productId, {
             include: [
                 {association: 'usuario'},
-                {association: 'comentarios', include: [{association: 'usuario'}]}
+                {association: 'comentarios', 
+                    include: [{association: 'usuario'}]}
             ]
         })
         .then(function(producto) {
             if (!producto)
                 return res.redirect('/')
-            return res.render('product', { title: `Detalle del producto ${producto.nombre}`, product: producto });
+            return res.render('product', { 
+                title: `Detalle del producto ${producto.nombre}`, 
+                product: producto,
+                logueado: req.session.user != undefined,
+                usuario: res.locals.user
+            });
         })
         .catch(function(error) {
             return res.send(error);
@@ -27,10 +34,27 @@ const productController = {
     },
     edit: function (req, res) {
         const productId = req.params.id;
+
+        if (req.session.user == undefined){
+            return res.redirect('/users/login');
+        }
+
         db.Producto.findByPk(productId)
         .then(function(producto) {
-            if (!producto)                return res.redirect('/')
-            return res.render('product-edit', { title: `Editar producto ${producto.nombre}`, product: producto, logueado: true, usuario:usuario });
+            if (!producto){
+                return res.redirect('/')
+            } 
+
+            if (producto.userId !== req.session.user.id){
+                return res.redirect('/');
+            }
+
+            return res.render('product-edit', { 
+                title: `Editar producto ${producto.nombre}`, 
+                product: producto, 
+                logueado: true, 
+                usuario: res.locals.user 
+            });
         })
         .catch(function(error) {
             return res.send(error);
@@ -38,18 +62,68 @@ const productController = {
 
     },
     add: function (req, res) {
-        return res.render('product-add', { title: 'Cargar producto', logueado: true, usuario:usuario });
+        if (req.session.user == undefined){
+            return res.redirect('/users/login');
+        }
+        return res.render('product-add', { 
+            title: 'Agregar producto', 
+            logueado: true,
+            usuario: res.locals.user
+        });
     },
     search: function (req, res) {
         const searchTerm = req.query.search;
-        ids = [5,9];
-        results =[];
-        for (let i = 0; i < data.productos.length; i++) {
-            if (data.productos[i].id == ids[0] || data.productos[i].id == ids[1]) {
-                results.push(data.productos[i]);
-            }
+        db.Producto.findAll({
+            where: {
+                nombre: {
+                    [db.Sequelize.Op.like]: `%${searchTerm}%`   
+                }
+            }, 
+            include: [
+                {association: 'usuario'}
+            ]
+        })
+        .then(function(productos) {
+            return res.render('search-results', {
+                title: `Resultados de búsqueda para ${searchTerm}`,
+                results: productos,
+                searchTerm: searchTerm,
+            });
+        })
+        .catch(function(error) {
+            return res.send(error);
+        }); 
+    },
+    addProduct: function (req, res) {
+        if (req.session.user == undefined){
+            return res.redirect('/users/login');
         }
-        return res.render('search-results', { title: `Resultados de búsqueda para ${searchTerm}`, results: results, logueado: true, usuario:usuario });
+
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.render('product-add', {
+                title: 'Agregar producto',
+                errors: errors.mapped(),
+                old: req.body,
+                logueado: true,
+                usuario: res.locals.user
+            });
+        }
+
+        db.Producto.create({
+            userId: req.session.user.id,
+            imagen: req.body.imagen,
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+            precio: req.body.precio
+        })
+        .then(function(producto) {
+            return res.redirect('/product/detail/' + producto.id);
+        })
+        .catch(function(error) {
+            return res.send(error);
+        });
     }
 }
 
