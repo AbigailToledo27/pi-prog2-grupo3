@@ -61,6 +61,53 @@ const productController = {
         });
 
     },
+    editProduct: function (req, res) {
+        const productId = req.params.id;
+
+        if (req.session.user == undefined){
+            return res.redirect('/users/login');
+        }
+
+        db.Producto.findByPk(productId)
+        .then(function(producto) {
+            if (!producto){
+                return res.redirect('/')
+            }
+            if (producto.userId !== req.session.user.id){
+                return res.redirect('/');
+            }
+
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.render('product-edit', {
+                title: `Editar producto ${producto.nombre}`,
+                product: producto,
+                errors: errors.mapped(),
+                old: req.body,
+                logueado: true,
+                usuario: res.locals.user
+            });
+        }
+
+        return db.Producto.update({
+            imagen: req.body.imagen,
+            nombre: req.body.nombre,
+            descripcion: req.body.descripcion,
+            precio: req.body.precio
+        }, {
+            where: {
+                id: productId
+            }
+        })
+        .then(function() {
+            return res.redirect('/product/detail/' + productId);
+        });
+        })
+        .catch(function(error) {
+            return res.send(error);
+        });
+    },
     add: function (req, res) {
         if (req.session.user == undefined){
             return res.redirect('/users/login');
@@ -73,6 +120,7 @@ const productController = {
     },
     search: function (req, res) {
         const searchTerm = req.query.search;
+
         db.Producto.findAll({
             where: {
                 nombre: {
@@ -120,6 +168,42 @@ const productController = {
         })
         .then(function(producto) {
             return res.redirect('/product/detail/' + producto.id);
+        })
+        .catch(function(error) {
+            return res.send(error);
+        });
+    },
+    deleteProduct: function (req, res) {
+        const productId = req.params.id;
+
+        if (req.session.user == undefined){
+            return res.redirect('/users/login');
+        }
+
+        db.Producto.findByPk(productId)
+        .then(function(producto) {
+            if (!producto){
+                return res.redirect('/')
+            }
+            if (producto.userId !== req.session.user.id){
+                return res.redirect('/');
+            }
+
+            return db.Comentario.destroy({
+                where: {
+                    productId: productId
+                }
+            })
+            .then(function() {
+                return db.Producto.destroy({
+                    where: {
+                        id: productId
+                    }
+                });
+            })
+            .then(function() {
+                return res.redirect('/');
+            });
         })
         .catch(function(error) {
             return res.send(error);
