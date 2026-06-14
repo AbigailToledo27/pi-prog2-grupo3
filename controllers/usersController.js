@@ -27,8 +27,8 @@ const usuarioController = {
                     res.cookie('userId', usuario.id, {maxAge:1000*60})
                     console.log(req.cookies.materia)
                 }
-                return res.redirect('/') //solo para probar el login
-                //return res.redirect('/users/profile/' + usuario.id) //descomentar esta linea para cuando este lo de productos y sí se pueda redirigir al perfil del usuario
+                //return res.redirect('/') //solo para probar el login
+                return res.redirect('/users/profile/' + usuario.id) //descomentar esta linea para cuando este lo de productos y sí se pueda redirigir al perfil del usuario
             })
     },
     showRegister: function(req,res) {
@@ -65,22 +65,34 @@ const usuarioController = {
         if (!req.session.user)
             return res.redirect('/users/login')
         const usuarioId = req.session.user.id;
-        db.Usuario.findByPk(usuarioId)
+        db.Usuario.findByPk(usuarioId, {
+          include: [
+            {association: 'productos',
+              include: {association: 'comentarios'}
+            }
+          ]
+        })
             .then(function (usuario) {
-                return res.render('profile',{usuario:usuario})
+                return res.render('profile',{productos: usuario.productos,usuario: usuario})
             })
             .catch(function (error) {
                 return res.send(error)
             })
-        
+
     },
     perfil: function (req,res) {
         const usuarioId = req.params.id;
-        db.Usuario.findByPk(usuarioId)
+        db.Usuario.findByPk(usuarioId,{
+          include: [
+            {association: 'productos',
+              include: {association: 'comentarios'}
+            }
+          ]
+        })
             .then(function (usuario) {
                 if (!usuario)
                     return res.redirect('/')
-                return res.render('profile',{usuario:usuario})
+                return res.render('profile',{productos: usuario.productos, usuario: usuario})
             })
             .catch(function (error) {
                 return res.send(error)

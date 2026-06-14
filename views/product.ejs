@@ -57,7 +57,31 @@
 
 					<!-- Comentarios del producto -->
 					<div class="col-12 col-lg-4">
-						
+						<section class="comments">
+							<h3 class="comments-title">Comentarios</h3>
+							<% if (product.comentarios.length == 0) { %>
+								<p>Todavía no hay comentarios para este producto.</p>
+							<% } else { %>
+								<% for (let i=0; i < product.comentarios.length; i++) { %>
+									<article>
+										<img class="foto-perfil" src="<%= product.comentarios[i].usuario.fotoPerfil %>"
+										alt="<%= product.comentarios[i].usuario.usuario %>">
+									<div class="data">
+										<p class="user">
+											<strong>
+												<a href="/users/profile/<%= product.comentarios[i].usuario.id %>">
+													<%= product.comentarios[i].usuario.usuario %>
+												</a>
+											</strong>
+											<span>
+												<%= product.comentarios[i].comentario %>
+											</span>
+										</p>
+									</div>
+								</article>
+							<% } %>
+						<% } %>
+					</section>
 
 					<!-- Formulario para agregar comentarios, solo si el usuario está logueado -->
 					<% if (locals.user != undefined){ %>
@@ -76,7 +100,7 @@
 	<!-- Footer -->
 	<%- include('./partials/footer') %>
 	<!-- /Footer -->
-	 
+
 </body>
 
 </html>

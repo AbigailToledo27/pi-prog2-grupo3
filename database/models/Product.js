@@ -23,7 +23,7 @@ module.exports = function (sequelize, DataTypes) {
             autoIncrement: true,
         },
         userId: {
-            type: DataTypes.INTEGER,    
+            type: DataTypes.INTEGER,
             unsigned: true,
             allowNull: false,
         },
@@ -46,7 +46,7 @@ module.exports = function (sequelize, DataTypes) {
     };
     let config = {
         tableName: 'productos',
-        timestamps: true,   
+        timestamps: true,
         underscored: false
     }
     let Producto = sequelize.define(alias, cols, config);

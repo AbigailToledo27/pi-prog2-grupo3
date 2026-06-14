@@ -1,11 +1,21 @@
-var express = require('express');
-var router = express.Router();
-const data = require("../db/productos");
-const usuario = require('../db/productos').usuario;
+const db = require('../database/models')
 
 const indexController = {
     index: function (req, res) {
-        return res.render('index', { title: 'Home', productos: data.productos, logueado:true, usuario:usuario });
+        db.Producto.findAll({
+            include: [
+                { association: 'comentarios' }
+            ]
+        })
+            .then(function(productos) {
+                return res.render('index', {
+                    title: 'Home',
+                    productos: productos
+                });
+            })
+            .catch(function(error) {
+                return res.send(error);
+            });
     }
 }
 
