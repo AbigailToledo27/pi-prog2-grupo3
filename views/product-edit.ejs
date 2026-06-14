@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- Include Head -->
 
 <head>
 	<meta charset="UTF-8">
@@ -27,17 +26,34 @@
 			<div class="col-12">
 				<h2 class="products-title">Editar datos del producto</h2>
 			</div>
-
-			<form action ="/users/profile" method="GET" class="productForm">
-					<input type="text" name="nombre" placeholder="Nombre del producto" value="<%= product.nombre %>">
-					<input type="text" name="descripcion" placeholder="Descripción del producto" value="<%= product.descripcion %>">
-					<input type="text" name="imagen" placeholder="URL de la imagen del producto" value="<%= product.imagen %>">
+			<div class="col-12">
+				<form action="/product/edit/<%= product.id %>" method="POST" class="productForm">
+					<input type="text" name="nombre" placeholder="Nombre del producto" value="<%= locals.old !== undefined && old.nombre ? old.nombre : product.nombre %>">
+					<% if (locals.errors && errors.nombre) { %>
+						<p class="error"><%= errors.nombre.msg %></p>
+					<% } %>
+					<input type="text" name="descripcion" placeholder="Descripción del producto" value="<%= locals.old !== undefined && old.descripcion ? old.descripcion : product.descripcion %>">
+					<% if (locals.errors && errors.descripcion) { %>
+						<p class="error"><%= errors.descripcion.msg %></p>
+					<% } %>
+					<input type="text" name="imagen" placeholder="Ruta de la imagen del producto" value="<%= locals.old !== undefined && old.imagen ? old.imagen : product.imagen %>">
+					<% if (locals.errors && errors.imagen) { %>
+						<p class="error"><%= errors.imagen.msg %></p>
+					<% } %>
+					<input type="text" name="precio" placeholder="Precio del producto" value="<%= locals.old !== undefined && old.precio ? old.precio : product.precio %>">
+					<% if (locals.errors && errors.precio) { %>
+						<p class="error"><%= errors.precio.msg %></p>
+					<% } %>
 					<button type="submit">Modificar producto</button>
 				</form>
+			</div>
+		</div>
+	</div>
 
 	<!-- Footer -->
 	<%- include('./partials/footer') %>
 	<!-- /Footer -->
+	
 </body>
 
 </html>

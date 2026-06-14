@@ -19,19 +19,25 @@
 <body>
 	<!-- Header -->
 	<%- include('./partials/header') %>
-		<!-- /Header -->
+	<!-- /Header -->
 
-		<!-- Novedades -->
-		<div class="container products-wrapper">
-			<div class="row">
+	<div class="container products-wrapper">
+		<div class="row product-list">
+			<div class="col-12">
+				<h2 class="products-title">
+					<%= title %>
+				</h2>
+			</div>
+			
+			<!-- Mensaje si no se encontraron productos -->
+			<% if (results.length == 0) { %>
 				<div class="col-12">
-					<h2 class="products-title">
-						<%= title %>
-					</h2>
+					<p class="no-results">No se encontraron resultados para tu búsqueda</p>
 				</div>
-				<!-- Show the "ultimos" products -->
+			<% } else { %>
+				<!-- Mostramos los productos encontrados -->
 				<% for( let i=0; i < results.length; i++ ) { %>
-					<div class="col-12 col-sm-5 col-lg-3">
+					<div class="col-12 col-sm-6 col-md-4 col-lg-3 product-column">
 						<section class="product-box">
 							<a href="/product/detail/<%= results[i].id %>">
 								<figure class="product-box_image">
@@ -44,16 +50,26 @@
 									<p>
 										<%= results[i].descripcion %>
 									</p>
-									<p>Comentarios: <%= results[i].cantidadComentarios %>
+									<p>
+										Precio: $<%= results[i].precio %> 
 									</p>
 								</article>
 							</a>
 						</section>
+						<p class="product-comments"> Publicado por: <strong>
+							<a href="/users/profile/<%= results[i].usuario.id %>"><%= results[i].usuario.usuario %></a>
+							</strong>
+						</p>
 					</div>
-					<% } %>
-						<!-- Footer -->
-						<%- include('./partials/footer') %>
-							<!-- /Footer -->
+				<% } %>
+			<% } %>
+		</div>
+	</div>
+			
+	<!-- Footer -->
+	<%- include('./partials/footer') %>
+	<!-- /Footer -->
+	
 </body>
 
 </html>
