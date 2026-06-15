@@ -39,7 +39,7 @@
 					<% if (locals.errors && errors.descripcion) { %>
 						<p class="error"><%= errors.descripcion.msg %></p>
 					<% } %>
-					<input type="text" name="imagen" placeholder="Ruta de la imagen del producto" value="<%= locals.old !== undefined && old.imagen ? old.imagen : '' %>">
+					<input type="text" name="imagen" placeholder="Ejemplo: /images/products/libro1.webp" value="<%= locals.old !== undefined && old.imagen ? old.imagen : '' %>">
 					<% if (locals.errors && errors.imagen) { %>
 						<p class="error"><%= errors.imagen.msg %></p>
 					<% } %>

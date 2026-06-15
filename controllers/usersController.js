@@ -24,8 +24,7 @@ const usuarioController = {
                 }
                 //verificosi el usuario hace click en el boton para ser recordado
                 if (req.body.remember){
-                    res.cookie('userId', usuario.id, {maxAge:1000*60})
-                    console.log(req.cookies.materia)
+                    res.cookie('userId', usuario.id, {maxAge:1000*60*30})
                 }
                 //return res.redirect('/') //solo para probar el login
                 return res.redirect('/users/profile/' + usuario.id) //descomentar esta linea para cuando este lo de productos y sí se pueda redirigir al perfil del usuario
@@ -47,7 +46,7 @@ const usuarioController = {
             usuario: usuario,
             email: email,
             contrasena: passwordHasheada,
-            fotoPerfil: 'profile-default.png'
+            fotoPerfil: '/images/users/profile-default.png'
         })
         .then(function() {
             return res.redirect("/users/login");
